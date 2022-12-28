@@ -9,7 +9,7 @@ jobs:
     - name: Step 1
       uses: actions/checkout@v2
     - name: Show the date
-      run: date '%D'
+      run: date %D
   job2:
     name: windows
     runs-on: windows-latest
@@ -17,7 +17,7 @@ jobs:
     - name: Step 1
       uses: actions/checkout@v2
     - name: Show the date
-      run: date %Y/%m/%d
+      run: echo %date:~-4%/%date:~3,2%/%date:~0,2%
   job3:
     name: macos
     runs-on: macos-latest
@@ -25,7 +25,7 @@ jobs:
     - name: Step 1
       uses: actions/checkout@v2
     - name: Show the date
-      run: echo %date:~-4%/%date:~3,2%/%date:~0,2%
+      run: date %Y/%m/%d
 
   job4:
     name: ubuntu 20.04
