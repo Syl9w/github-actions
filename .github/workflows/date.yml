@@ -1,0 +1,38 @@
+on: push
+
+jobs:
+  job1:
+    name: ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+      uses: actions/checkout@v2
+      - name: Show the date
+      run: date '%D'
+  job2:
+    name: windows
+    runs-on: windows-latest
+    steps:
+      - name: Step 1
+      uses: actions/checkout@v2
+      - name: Show the date
+      run: date %Y/%m/%d
+  job3:
+    name: macos
+    runs-on: macos-latest
+    steps:
+      - name: Step 1
+      uses: actions/checkout@v2
+      - name: Show the date
+      run: echo %date:~-4%/%date:~3,2%/%date:~0,2%
+
+  job4:
+    name: ubuntu 20.04
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Step 1
+      uses: actions/checkout@v2
+      - name: Show the date
+      run: date '%D'
+
+
