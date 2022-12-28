@@ -1,3 +1,4 @@
+name: Show dates
 on: push
 
 jobs:
@@ -28,6 +29,7 @@ jobs:
 
   job4:
     name: ubuntu 20.04
+    needs: [job1, job2, job3]
     runs-on: ubuntu-20.04
     steps:
     - name: Step 1
